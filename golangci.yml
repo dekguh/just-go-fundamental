@@ -1,0 +1,25 @@
+version: 2
+linters:
+  enable:
+    - errcheck
+    - errchkjson
+    - nilnil
+    - nilerr
+    - gofmt
+    - whitespace
+    - G101-G602
+    - prealloc
+    - goconst
+    - ineffassign
+    - govet
+    - unused
+    - deadcode
+
+run:
+  timeout: 2m
+  tests: false
+
+output:
+  format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true
