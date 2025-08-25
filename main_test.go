@@ -7,8 +7,8 @@ import (
 
 func TestSumTotal(t *testing.T) {
 	t.Run("should return 0 if the array is empty", func(t *testing.T) {
-		expected := 0
-		input := []int{}
+		expected := float32(0)
+		input := []float32{}
 		result := helpers.SumTotal((input))
 		if result != expected {
 			t.Errorf("expected is %d but got %d", expected, result)
