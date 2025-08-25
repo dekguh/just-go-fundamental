@@ -13,4 +13,5 @@ func main() {
 	fmt.Println("Hello, World!")
 	fmt.Println(helpers.TextCapitalize("hello world"))
 	fmt.Println(helpers.InterpolateFormula(1, 10, 20))
+	fmt.Println(helpers.GenerateCarDetail())
 }

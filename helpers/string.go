@@ -1,6 +1,9 @@
 package helpers
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func TextCapitalize(words string) string {
 	splitWords := strings.Split(words, " ")
@@ -13,4 +16,17 @@ func TextCapitalize(words string) string {
 	}
 
 	return strings.Join(tempData, " ")
+}
+
+func GenerateCarDetail() string {
+	car := Vehicle{
+		brand: "Toyota",
+		model: "Avanza",
+		Engine: Engine{
+			cc:   1500,
+			fuel: "Bensin",
+		},
+	}
+
+	return fmt.Sprintf("Brand: %s, Model: %s, Engine: %d cc, Fuel: %s", car.brand, car.model, car.Engine.cc, car.Engine.fuel)
 }

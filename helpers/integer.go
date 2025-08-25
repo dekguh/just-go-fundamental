@@ -32,3 +32,7 @@ func InterpolateFormula(pt1, pt2 float32, duration int) []float32 {
 
 	return result
 }
+
+func VolumeFormula(h, w, l float64) float64 {
+	return h * w * l
+}
