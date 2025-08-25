@@ -1,14 +1,17 @@
 package main
 
-import "testing"
+import (
+	"learn/just-go-fundamental/helpers"
+	"testing"
+)
 
-func TestHello(t *testing.T) {
-	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("world")
-		want := "hello"
-
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
+func TestSumTotal(t *testing.T) {
+	t.Run("should return 0 if the array is empty", func(t *testing.T) {
+		expected := 0
+		input := []int{}
+		result := helpers.SumTotal((input))
+		if result != expected {
+			t.Errorf("expected is %d but got %d", expected, result)
 		}
 	})
 }
