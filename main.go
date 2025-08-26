@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"learn/just-go-fundamental/cases"
 	"learn/just-go-fundamental/helpers"
 )
 
@@ -47,4 +48,17 @@ func main() {
 	for _, user := range users {
 		fmt.Println(user)
 	}
+
+	var flowerShopDetail cases.Shop
+	gorgeousFleur := cases.FlowerShop{
+		Name:    "Gorgeous Fleur",
+		Address: "Jl. Raya Cibadak No. 123",
+	}
+	flowerShopDetail = &gorgeousFleur
+
+	fmt.Println(flowerShopDetail.GetName())
+	fmt.Println(flowerShopDetail.GetAddress())
+
+	gorgeousFleur.Address = "JL By Pass Ngurah Rai"
+	fmt.Println(flowerShopDetail.GetAddress())
 }
