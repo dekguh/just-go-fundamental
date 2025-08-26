@@ -4,10 +4,18 @@ import (
 	"fmt"
 	"learn/just-go-fundamental/cases"
 	"learn/just-go-fundamental/helpers"
+	"time"
 )
 
 func Hello(name string) string {
 	return name
+}
+
+func printDelayMsg(msg string) {
+	for i := 0; i < 3; i++ {
+		fmt.Println(msg)
+		time.Sleep(time.Millisecond * 500)
+	}
 }
 
 func main() {
@@ -17,7 +25,7 @@ func main() {
 	fmt.Println(helpers.GenerateCarDetail())
 
 	var balance int = 0
-	var wallet *int = &balance
+	wallet := &balance
 	*wallet = 20
 	fmt.Println(balance)
 
@@ -69,4 +77,18 @@ func main() {
 		Total: 12.5,
 	}
 	fmt.Println(triangle.Total)
+
+	printDelayMsg("hi goroutine")
+	go printDelayMsg("1")
+	go printDelayMsg("2")
+
+	ch := make(chan string)
+	go func() {
+		ch <- "send to you"
+	}()
+
+	msg := <-ch
+	fmt.Println(msg)
+
+	cases.OrderBouquets()
 }
