@@ -61,4 +61,12 @@ func main() {
 
 	gorgeousFleur.Address = "JL By Pass Ngurah Rai"
 	fmt.Println(flowerShopDetail.GetAddress())
+
+	type Sum[T any] struct {
+		Total T
+	}
+	triangle := Sum[float64]{
+		Total: 12.5,
+	}
+	fmt.Println(triangle.Total)
 }
